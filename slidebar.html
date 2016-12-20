@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html>
-<style>
-div.slidebar {
-    background-color: #00FF00;
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-    padding:1rem 0;
-}
-.lii {
-    width: 23%;
-    color: #079eeb;
-    text-align: center;
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 2rem;
-    background-color: #fff;
-    border-color: #abb1b4;
-    border: 2px solid #079eeb;
-    border-radius: 5px;
-    margin: 0 5%;
-}
-</style>
-<body>
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
-<p>a drink slide bar:</p>
-<div class="slidebar">
-  <div class="lii">Coffee</div>
-  <div class="lii">Tea</div>
-  <div class="lii">Milk</div>
-  <div class="lii">Cola</div>
-</div>
+    <style>
+    div.slidebar {
+        background-color: #00FF00;
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding:1rem 0;
+    }
+    .lii {
+        width: 23%;
+        color: #079eeb;
+        text-align: center;
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 2rem;
+        background-color: #fff;
+        border-color: #abb1b4;
+        border: 2px solid #079eeb;
+        border-radius: 5px;
+        margin: 0 5%;
+    }
+    .cur-tab-btn a,.cur-tab-btn{color: #ffea73!important;}
+    </style>
+
+    <script>
+    $(function(){
+        $(".slidebar").find("div").click(function(){
+            $(this).addClass('cur-tab-btn').siblings('div').removeClass('cur-tab-btn')
+        })
+    })
+    </script>
+</head>
+<body>
+    <p>a drink slide bar:</p>
+    <div class="slidebar">
+      <div class="lii cur-tab-btn"><a>Coffee</a></div>
+      <div class="lii">Tea</div>
+      <div class="lii">Milk</div>
+      <div class="lii">Cola</div>
+    </div>
 </body>
 </html>
